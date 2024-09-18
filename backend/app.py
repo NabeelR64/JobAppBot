@@ -7,6 +7,7 @@ app = Flask(__name__)
 # File upload endpoint
 @app.route('/upload_resume', methods=['POST'])
 def upload_resume():
+    print("file received")
     if 'file' not in request.files:
         return jsonify({'error': 'No file uploaded'}), 400
 
@@ -23,9 +24,13 @@ def upload_resume():
     suggested_roles = suggest_job_roles(resume_text)
 
     return jsonify({
-        'resume_text': resume_text,
         'suggested_roles': suggested_roles
     })
 
+@app.route('/test', methods=['GET'])
+def test_route():
+    print("Test route was called")
+    return "Flask is running!"
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=1992)

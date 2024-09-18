@@ -1,0 +1,5 @@
+Flask>=2.0
+pdfplumber
+python-docx
+openai
+python-dotenv

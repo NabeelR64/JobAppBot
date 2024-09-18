@@ -1,0 +1,13 @@
+<div>
+    <h3>Filter Jobs</h3>
+    <label for="experience">Experience Level:</label>
+    <select [(ngModel)]="selectedExperienceLevel">
+      <option *ngFor="let level of experienceLevels" [value]="level">{{ level }}</option>
+    </select>
+  
+    <label for="location">Location:</label>
+    <input type="text" [(ngModel)]="location" />
+  
+    <button (click)="searchJobs()">Search Jobs</button>
+  </div>
+  
