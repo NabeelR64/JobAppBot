@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';  // Required for ngModel
 
@@ -5,7 +6,7 @@ import { FormsModule } from '@angular/forms';  // Required for ngModel
 @Component({
   selector: 'app-search-form',
   standalone: true,  // Make it standalone
-  imports: [FormsModule], 
+  imports: [FormsModule, CommonModule], 
   templateUrl: './search-form.component.html',
   styleUrls: ['./search-form.component.css']
 })

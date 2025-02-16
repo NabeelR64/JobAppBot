@@ -3,10 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --host 0.0.0.0 --port 4200",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
+    "lint": "ng lint",
     "test": "ng test",
+    "e2e": "ng e2e",
     "serve:ssr:job-application-portal": "node dist/job-application-portal/server/server.mjs"
   },
   "private": true,

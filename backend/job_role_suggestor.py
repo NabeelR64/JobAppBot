@@ -25,8 +25,6 @@ def suggest_job_roles(resume_text):
             )
 
         job_roles = response.choices[0].message.content.split(',')
-        print(job_roles, "job roelsssssssssss")
-
         # Clean up and return the list of job roles
         return [role.strip() for role in job_roles if role.strip()]
 

@@ -1,5 +1,5 @@
-# Use Node.js 18 as the base image to satisfy Angular CLI requirements
-FROM node:18-alpine AS build
+# Use official Node.js image as the base image
+FROM node:18-alpine AS development
 
 # Set working directory in the container
 WORKDIR /app
@@ -10,20 +10,11 @@ COPY package*.json ./
 # Install dependencies
 RUN npm install
 
-# Copy the rest of the application source code to the container
+# Copy the entire project to the working directory
 COPY . .
 
-# Build the Angular app
-RUN npm run build --prod
+# Expose the port that Angular serves the app on (default is 4200)
+EXPOSE 4200
 
-# Stage 2: Serve the app using nginx
-FROM nginx:alpine
-
-# Copy built files from the previous stage
-COPY --from=build /app/dist/job-application-portal /usr/share/nginx/html
-
-# Expose port 80 for the Angular app
-EXPOSE 80
-
-# Start NGINX server
-CMD ["nginx", "-g", "daemon off;"]
+# Start the Angular app using ng serve
+CMD ["npm", "run", "start"]

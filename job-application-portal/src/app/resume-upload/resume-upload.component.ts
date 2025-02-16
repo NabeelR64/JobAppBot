@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { ResumeService } from '../resume.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-resume-upload',
   standalone: true,
   templateUrl: './resume-upload.component.html',
-  styleUrls: ['./resume-upload.component.css']
+  styleUrls: ['./resume-upload.component.css'],
+  imports: [CommonModule]
 })
 export class ResumeUploadComponent {
   fileToUpload: File | null = null;
@@ -23,7 +25,7 @@ export class ResumeUploadComponent {
       this.resumeService.uploadResume(this.fileToUpload).subscribe(
         (response) => {
           this.jobSuggestions = response.suggested_roles;
-          console.log(response.suggested_roles);
+          console.log("raaaaaaaa" + response.suggested_roles);
         },
         (error) => {
           this.errorMessage = 'Error uploading resume';
