@@ -1,4 +1,4 @@
-#!/Users/nrahman/workspace/github.com/NabeelR64/JobAppBot/.venv/bin/python3.12
+#!/Users/sahraarifi/Projects/JobAppBot/.venv/bin/python3.13
 # -*- coding: utf-8 -*-
 import re
 import sys

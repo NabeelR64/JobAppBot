@@ -7,11 +7,17 @@ import { JobRoleSelectionComponent } from './job-role-selection/job-role-selecti
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, SearchFormComponent, ResumeUploadComponent, JobRoleSelectionComponent],
+  imports: [
+    RouterOutlet,
+    SearchFormComponent,
+    ResumeUploadComponent,
+    JobRoleSelectionComponent
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']   // ✅ plural
 })
 export class AppComponent {
   title = 'job-application-portal';
-  jobSuggestions: string[] = [];
+  jobSuggestions: string[] = [];       // ✅ fine for now
+  year: number = new Date().getFullYear(); // Add this line to define the year property
 }
