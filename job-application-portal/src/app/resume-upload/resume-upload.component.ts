@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common'; // Import CommonModule
 import { ResumeService } from '../resume.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-resume-upload',
   standalone: true,
+  imports: [CommonModule], // Add CommonModule here
   templateUrl: './resume-upload.component.html',
   styleUrls: ['./resume-upload.component.css'],
   imports: [CommonModule]
